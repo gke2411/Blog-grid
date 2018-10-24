@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@font-face {
+    font-family: 'Big John';
+    src: url('../fonts/bigjohn.woff2') format('woff2'),
+         url('../fonts/bigjohn.woff') format('woff'),
+         url('../fonts/bigjohn.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Slim Joe';
+    src: url('../fonts/slimjoe.woff2') format('woff2'),
+         url('../fonts/slimjoe.woff') format('woff'),
+         url('../fonts/slimjoe.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+	box-sizing: border-box;
+}
+html{
+	font-size: 10px;
+	height: 100%;
+}
+body{
+	font-family: 'Lato', sans-serif;
+	font-size: 1.6rem;
+	color: #1d1d1d;
+	min-height: 100%;
+    background-color: #e2e7ec;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1120px;
+    max-width: 100%;
+
+}
+
+.flex-row{
+    display: flex;
+    flex-wrap:  wrap;    
+    justify-content: space-between;
+}
+.flex-row:after{
+    content: '';
+    flex: content;
+    width: 360px;
+}
+
+.flex-item{
+    width: 360px;
+    height: 540px;
+    margin: 10px 0;
+}
+
+.flex-item--lg,
+.post--lg{
+    width: 740px;   
+}
+
+.post{
+    overflow: hidden;
+    transition: all 0.4s ease-in;
+    position: relative;
+}
+.post:hover,
+.post:focus,
+.post:active{
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.1)
+}
+.post__link{
+    text-decoration: none;
+    color: inherit;
+}
+.post__img-wrap{
+    overflow: hidden;
+    height: 45%;
+    position: relative;
+}
+.post__img{
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.post__data{
+    height: 55%;
+    background-color: #fff;
+    padding: 30px;
+    display:  flex;
+    flex-direction: column;
+}
+.post__time{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: #818181;
+}
+.post__time:empty{
+    height: 1.5rem;
+}
+.post__title{
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    margin: 20px 0;
+    max-height: 11rem;
+    overflow: hidden;
+    font-weight: bold;
+}
+.post__author{
+    margin-top: auto;
+}
+
+.post--lg .post__author{
+    display: none;
+}
+
+.post--lg .post__img-wrap,
+.post--lg .post__data{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+}
+.post--lg .post__data{
+    background-color: transparent;
+    color: #fff;
+    justify-content: flex-end;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .9), 0%, rgba(0, 0, 0, .7), 20%, transparent, 70%);
+}
+.post--lg .post__title{
+    width: 70%
+}
